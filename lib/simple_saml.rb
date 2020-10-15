@@ -3,6 +3,7 @@ require "simple_saml/configuration"
 require "simple_saml/admin_credential"
 require "simple_saml/settings"
 require "simple_saml/request"
+require "simple_saml/response"
 
 module SimpleSaml
   class << self
