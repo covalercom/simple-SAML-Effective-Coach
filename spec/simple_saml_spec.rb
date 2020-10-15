@@ -3,6 +3,14 @@ RSpec.describe SimpleSaml do
     expect(SimpleSaml::VERSION).not_to be nil
   end
 
+  it "configs are nil by default" do
+    config = SimpleSaml.configuration
+    expect(config.provider).to be_nil
+    expect(config.login_url).to be_nil
+    expect(config.cert_fingerprint).to be_nil
+    expect(config.name_identifier_format).to be_nil
+  end
+
   it "can be configured" do
     SimpleSaml.configure do |config|
       config.provider = :beddoes
