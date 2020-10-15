@@ -19,7 +19,7 @@ RSpec.describe SimpleSaml do
     config = SimpleSaml.configuration
 
     expect(config.provider).to eq(:beddoes)
-    expect(config.login_url).to eq("https://localhost:3000/login")
+    expect(config.login_url).to eq("https://auth.beddoes.com.au/login_url")
     expect(config.cert_fingerprint).to eq("AB:23:CH:54...")
     expect(config.name_identifier_format).to eq("urn:oasis:names...")
   end
