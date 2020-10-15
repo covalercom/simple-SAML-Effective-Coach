@@ -1,14 +1,16 @@
 RSpec.describe SimpleSaml do
+  before(:each) { SimpleSaml.reset_config }
+
   it "has a version number" do
     expect(SimpleSaml::VERSION).not_to be nil
   end
 
   it "configs are nil by default" do
     config = SimpleSaml.configuration
-    expect(config.provider).to be_nil
-    expect(config.login_url).to be_nil
-    expect(config.cert_fingerprint).to be_nil
-    expect(config.name_identifier_format).to be_nil
+    expect(config.provider).to be nil
+    expect(config.login_url).to be nil
+    expect(config.cert_fingerprint).to be nil
+    expect(config.name_identifier_format).to be nil
   end
 
   it "can be configured" do

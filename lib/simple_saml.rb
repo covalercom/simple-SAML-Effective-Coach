@@ -1,5 +1,6 @@
 require "simple_saml/version"
 require "simple_saml/configuration"
+require "simple_saml/admin_credential"
 
 module SimpleSaml
   class << self
@@ -8,6 +9,10 @@ module SimpleSaml
 
   def self.configuration
     @configuration ||= SimpleSaml::Configuration.new
+  end
+
+  def self.reset_config
+    @configuration = SimpleSaml::Configuration.new
   end
 
   def self.configure
