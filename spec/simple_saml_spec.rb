@@ -7,6 +7,7 @@ RSpec.describe SimpleSaml do
 
   it "configs are nil by default" do
     config = SimpleSaml.configuration
+
     expect(config.provider).to be nil
     expect(config.login_url).to be nil
     expect(config.cert_fingerprint).to be nil
@@ -14,14 +15,9 @@ RSpec.describe SimpleSaml do
   end
 
   it "can be configured" do
-    SimpleSaml.configure do |config|
-      config.provider = :beddoes
-      config.login_url = "https://localhost:3000/login"
-      config.cert_fingerprint = "AB:23:CH:54..."
-      config.name_identifier_format = "urn:oasis:names..."
-    end
-
+    set_configurations!
     config = SimpleSaml.configuration
+
     expect(config.provider).to eq(:beddoes)
     expect(config.login_url).to eq("https://localhost:3000/login")
     expect(config.cert_fingerprint).to eq("AB:23:CH:54...")

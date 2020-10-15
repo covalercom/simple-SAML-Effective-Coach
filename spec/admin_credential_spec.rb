@@ -17,13 +17,7 @@ RSpec.describe SimpleSaml::AdminCredential do
   end
 
   it "are present when configs set" do
-    SimpleSaml.configure do |config|
-      config.provider = :beddoes
-      config.login_url = "https://localhost:3000/login"
-      config.cert_fingerprint = "AB:23:CH:54..."
-      config.name_identifier_format = "urn:oasis:names..."
-    end
-
+    set_configurations!
     credentials = SimpleSaml::AdminCredential.new(request)
 
     expect(credentials.provider).to eq :beddoes
