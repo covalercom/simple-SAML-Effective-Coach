@@ -27,4 +27,13 @@ RSpec.describe SimpleSaml::AdminCredential do
     expect(credentials.entity_id).to eq "https://localhost:3000"
     expect(credentials.callback_url).to eq "https://localhost:3000/auth/saml/callback"
   end
+
+  it "can have custom callback path" do
+    SimpleSaml::AdminCredential.configure do |config|
+      config.callback_path = "/my/custom/callback"
+    end
+
+    credentials = SimpleSaml::AdminCredential.new(request)
+    expect(credentials.callback_url).to eq "https://localhost:3000/my/custom/callback"
+  end
 end
