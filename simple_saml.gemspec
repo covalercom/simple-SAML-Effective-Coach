@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Daniel Wachtel"]
   spec.email         = ["daniel.wachtel@allori.edu.au"]
 
-  spec.summary       = %q{Allori/Beddoes SAML authentication gem}
-  spec.description   = %q{Allori/Beddoes SAML authentication gem}
+  spec.summary       = %q{Beddoes SAML authentication gem}
+  spec.description   = %q{Beddoes SAML authentication gem}
   spec.homepage      = ""
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
