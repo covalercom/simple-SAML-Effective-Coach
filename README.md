@@ -61,6 +61,7 @@ def create
     # refer lib/simple_saml/response.rb for available attributes
   else
     # display errors
+    # errors array can be accessed via `response.errors`
   end
 end
 ```
