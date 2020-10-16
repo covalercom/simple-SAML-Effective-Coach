@@ -1,5 +1,9 @@
 module SimpleSaml
   class AdminCredential
+    class << self
+      attr_accessor :configuration
+    end
+
     attr_reader :provider, :entity_id, :callback_url, :login_url, :cert_fingerprint, :name_identifier_format
 
     def initialize(request)
@@ -12,7 +16,7 @@ module SimpleSaml
     end
 
     def config
-      @config ||= SimpleSaml.configuration
+      @config ||= SimpleSaml::AdminCredential.configuration
     end
 
     def set_entity_id(request)
@@ -21,6 +25,18 @@ module SimpleSaml
 
     def set_callback_url(request)
       set_entity_id(request) + "/auth/saml/callback"
+    end
+
+    def self.configuration
+      @configuration ||= SimpleSaml::AdminConfiguration.new
+    end
+
+    def self.reset_config
+      @configuration = SimpleSaml::AdminConfiguration.new
+    end
+
+    def self.configure
+      yield(configuration)
     end
   end
 end

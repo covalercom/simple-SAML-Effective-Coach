@@ -1,12 +1,12 @@
 RSpec.describe SimpleSaml do
-  before(:each) { SimpleSaml.reset_config }
+  before(:each) { SimpleSaml::AdminCredential.reset_config }
 
   it "has a version number" do
     expect(SimpleSaml::VERSION).not_to be nil
   end
 
   it "configs are nil by default" do
-    config = SimpleSaml.configuration
+    config = SimpleSaml::AdminCredential.configuration
 
     expect(config.provider).to be nil
     expect(config.login_url).to be nil
@@ -16,7 +16,7 @@ RSpec.describe SimpleSaml do
 
   it "can be configured" do
     set_configurations!
-    config = SimpleSaml.configuration
+    config = SimpleSaml::AdminCredential.configuration
 
     expect(config.provider).to eq(:beddoes)
     expect(config.login_url).to eq("https://auth.beddoes.com.au/login_url")

@@ -1,6 +1,6 @@
 module HelperMethods
   def set_configurations!
-    SimpleSaml.configure do |config|
+    SimpleSaml::AdminCredential.configure do |config|
       config.provider = :beddoes
       config.login_url = "https://auth.beddoes.com.au/login_url"
       config.cert_fingerprint = "AB:23:CH:54..."

@@ -1,5 +1,5 @@
 module SimpleSaml
-  class Configuration
+  class AdminConfiguration
     attr_accessor :provider, :login_url, :cert_fingerprint, :name_identifier_format
 
     def initialize
