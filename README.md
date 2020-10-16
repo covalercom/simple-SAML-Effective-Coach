@@ -28,15 +28,14 @@ Create an initializer to set up admin credentials. These are used for Allori / B
 # e.g. config/initializers/simple_saml.rb in a Rails app
 SimpleSaml::AdminCredential.configure do |config|
   config.provider = :beddoes
+  config.name_identifier_format = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
 
   if Rails.env.production?
     config.login_url = "https://auth.beddoes.com.au/login_url"
     config.cert_fingerprint = "AB:23:CH:54..."
-    config.name_identifier_format = "urn:oasis:names..."
   else
     config.login_url = "https://localhost:3100/login_url"
     config.cert_fingerprint = "CD:12:AB:3F..."
-    config.name_identifier_format = "urn:oasis:names..."
   end
 end
 ```
