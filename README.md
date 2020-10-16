@@ -29,6 +29,7 @@ Create an initializer to set up admin credentials. These are used for Allori / B
 SimpleSaml::AdminCredential.configure do |config|
   config.provider = :beddoes
   config.name_identifier_format = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
+  config.callback_path = "/auth/saml/admin/callback" # optional, defaults to "/auth/saml/callback"
 
   if Rails.env.production?
     config.login_url = "https://auth.beddoes.com.au/login_url"
