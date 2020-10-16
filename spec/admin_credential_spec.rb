@@ -3,7 +3,7 @@ require "ostruct"
 RSpec.describe SimpleSaml::AdminCredential do
   let(:request) { OpenStruct.new(base_url: "https://localhost:3000") }
 
-  before(:each) { SimpleSaml::AdminCredential.reset_config }
+  before(:each) { SimpleSaml::AdminCredential.reset_config! }
 
   it "are nil when configs not set" do
     credentials = SimpleSaml::AdminCredential.new(request)

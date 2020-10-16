@@ -31,7 +31,7 @@ module SimpleSaml
       @configuration ||= SimpleSaml::AdminConfiguration.new
     end
 
-    def self.reset_config
+    def self.reset_config!
       @configuration = SimpleSaml::AdminConfiguration.new
     end
 
