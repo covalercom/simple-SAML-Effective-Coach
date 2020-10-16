@@ -26,7 +26,6 @@ Create an initializer to set up admin credentials. These are used for Allori / B
 
 ```ruby
 # e.g. config/initializers/simple_saml.rb in a Rails app
-
 SimpleSaml::AdminCredential.configure do |config|
   config.provider = :beddoes
 
@@ -46,7 +45,6 @@ Then in a controller:
 
 ```ruby
 # Beddoes admin credentials
-
 def new
   credentials = SimpleSaml::AdminCredential.new(request)
   request = SimpleSaml::Request.new(credentials)
@@ -79,7 +77,6 @@ For clients the credential object can be retrieved from the database instead and
 
 ```ruby
 # Non-Beddoes client credentials
-
 def new
   credentials = YourModel.find_by_foo(params[:foo])
   request = SimpleSaml::Request.new(credentials)
