@@ -16,11 +16,11 @@ module SimpleSaml
     end
 
     def set_entity_id(request)
-      request.base_url + "/auth/saml"
+      request.base_url
     end
 
     def set_callback_url(request)
-      request.base_url + "/auth/saml/callback"
+      set_entity_id(request) + "/auth/saml/callback"
     end
   end
 end

@@ -12,7 +12,7 @@ RSpec.describe SimpleSaml::AdminCredential do
     expect(credentials.login_url).to be nil
     expect(credentials.cert_fingerprint).to be nil
     expect(credentials.name_identifier_format).to be nil
-    expect(credentials.entity_id).to eq "https://localhost:3000/auth/saml"
+    expect(credentials.entity_id).to eq "https://localhost:3000"
     expect(credentials.callback_url).to eq "https://localhost:3000/auth/saml/callback"
   end
 
@@ -24,7 +24,7 @@ RSpec.describe SimpleSaml::AdminCredential do
     expect(credentials.login_url).to eq "https://auth.beddoes.com.au/login_url"
     expect(credentials.cert_fingerprint).to eq "AB:23:CH:54..."
     expect(credentials.name_identifier_format).to eq "urn:oasis:names..."
-    expect(credentials.entity_id).to eq "https://localhost:3000/auth/saml"
+    expect(credentials.entity_id).to eq "https://localhost:3000"
     expect(credentials.callback_url).to eq "https://localhost:3000/auth/saml/callback"
   end
 end
