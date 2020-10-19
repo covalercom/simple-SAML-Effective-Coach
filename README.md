@@ -89,8 +89,12 @@ Required fields can be found in `lib/simple_saml/settings.rb`.
 
 ## Cert fingerprint
 
-You can generate a certificate fingerprint for the `cert_fingerprint` field by pasting the `X.509 cert`
-[here](https://www.samltool.com/fingerprint.php) and selecting the `sha256` algorithm.
+To generate a certificate fingerprint for the `cert_fingerprint` field run the following command:
+
+```
+openssl x509 -in development.crt -noout -fingerprint -sha256
+# SHA256 Fingerprint=5C:68:18:82:48:38:73:9D:44:31:5F:69...
+```
 
 ## Creating mapping for additional Identity Providers
 
