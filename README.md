@@ -35,10 +35,10 @@ SimpleSaml::AdminCredential.configure do |config|
   config.callback_path = "/auth/saml/admin/callback" # optional, defaults to "/auth/saml/callback"
 
   if Rails.env.production?
-    config.login_url = "https://auth.beddoes.com.au/login_url"
+    config.login_url = "https://auth.beddoes.com.au/login/url/path"
     config.cert_fingerprint = "AB:23:CH:54..."
   else
-    config.login_url = "https://localhost:3100/login_url"
+    config.login_url = "https://localhost:3100/login/url/path"
     config.cert_fingerprint = "CD:12:AB:3F..."
   end
 end
