@@ -4,6 +4,9 @@ SimpleSaml provides an easy interface for the *Service Provider* in a SAML authe
 
 It is built on top of the `ruby-saml` gem and further simplifies creating SAML requests & responses, and also maps response attributes.
 
+It also includes an `AdminCredential` module which can be configured once for multiple instances. This means admins of a system can use
+the `AdminCredential` to initiate SAML authentication, whereas non-admins (customers) can have a unique SAML credential on each instance.
+
 ## Installation
 
 Add this line to your application's Gemfile:
