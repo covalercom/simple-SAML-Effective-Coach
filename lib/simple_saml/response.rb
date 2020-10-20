@@ -12,7 +12,8 @@ module SimpleSaml
         name: "#{AZURE_CLAIMS}/displayname",
         first_name: "#{SAML_CLAIMS}/givenname",
         last_name: "#{SAML_CLAIMS}/surname",
-        email: "#{SAML_CLAIMS}/emailaddress"
+        email: "#{SAML_CLAIMS}/emailaddress",
+        title: "#{SAML_CLAIMS}/jobtitle"
       },
       beddoes: {
         tenant_id: "tenant_id",
@@ -20,7 +21,8 @@ module SimpleSaml
         name: "name",
         first_name: "first_name",
         last_name: "last_name",
-        email: "email"
+        email: "email",
+        title: "title"
       }
     }
 
