@@ -33,14 +33,8 @@ SimpleSaml::AdminCredential.configure do |config|
   config.provider = :beddoes
   config.name_identifier_format = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
   config.callback_path = "/auth/saml/admin/callback" # optional, defaults to "/auth/saml/callback"
-
-  if Rails.env.production?
-    config.login_url = "https://auth.beddoes.com.au/login/url/path"
-    config.cert_fingerprint = "AB:23:CH:54..."
-  else
-    config.login_url = "https://localhost:3100/login/url/path"
-    config.cert_fingerprint = "CD:12:AB:3F..."
-  end
+  config.login_url = ENV["SAML_LOGIN_URL"]
+  config.cert_fingerprint = ENV["SAML_CERT_FINGERPRINT"]
 end
 ```
 
@@ -48,13 +42,13 @@ Then in a controller:
 
 ```ruby
 # Beddoes admin credentials
-def new
+def init
   credentials = SimpleSaml::AdminCredential.new(request)
   request = SimpleSaml::Request.new(credentials)
   redirect_to request.login_url
 end
 
-def create
+def consume
   credentials = SimpleSaml::AdminCredential.new(request)
   response = SimpleSaml::Response.new(params[:SAMLResponse], credentials)
 
@@ -81,7 +75,7 @@ For clients the credential object can be retrieved from the database instead and
 
 ```ruby
 # Non-Beddoes client credentials
-def new
+def init
   credentials = YourModel.find_by_foo(params[:foo])
   request = SimpleSaml::Request.new(credentials)
   # ...
