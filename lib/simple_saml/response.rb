@@ -23,7 +23,16 @@ module SimpleSaml
         last_name: "last_name",
         email: "email",
         title: "title"
-      }
+      },
+      effective: {
+        tenant_id: "tenant_id",
+        uid: "uid",
+        name: "name",
+        first_name: "first_name",
+        last_name: "last_name",
+        email: "email",
+        title: "title"
+      },
     }
 
     def initialize(params, credentials)
