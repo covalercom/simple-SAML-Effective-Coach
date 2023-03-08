@@ -6,12 +6,12 @@ require "simple_saml/version"
 Gem::Specification.new do |spec|
   spec.name          = "simple_saml"
   spec.version       = SimpleSaml::VERSION
-  spec.authors       = ["Daniel Wachtel"]
-  spec.email         = ["support@beddoes.com.au"]
+  spec.authors       = ["Daniel Wachtel", "Peter O'Sullivan"]
+  spec.email         = ["peter@effective.coach"]
 
   spec.summary       = %q{Beddoes SAML authentication gem}
   spec.description   = %q{Beddoes SAML authentication gem}
-  spec.homepage      = "https://bitbucket.org/allori/simple_saml"
+  spec.homepage      = "https://github.com/covalercom/simple-SAML-Effective-Coach"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rexml", "~> 3.2"
 
   spec.add_dependency "ruby-saml", "~> 1.11.0"
 end
