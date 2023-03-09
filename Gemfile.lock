@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    simple_saml (0.1.6)
-      ruby-saml (~> 1.11.0)
+    simple_saml (0.1.7)
+      ruby-saml (~> 1.11)
 
 GEM
   remote: https://rubygems.org/
@@ -14,6 +14,7 @@ GEM
       racc (~> 1.4)
     racc (1.6.2)
     rake (13.0.6)
+    rexml (3.2.5)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
@@ -27,8 +28,9 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.0)
-    ruby-saml (1.11.0)
-      nokogiri (>= 1.5.10)
+    ruby-saml (1.15.0)
+      nokogiri (>= 1.13.10)
+      rexml
 
 PLATFORMS
   ruby
